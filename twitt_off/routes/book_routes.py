@@ -27,3 +27,19 @@ def list_books_for_humans():
 # 3 - data that we hope to inject into the page
 # Pattern is the same as in the home routes
 
+@book_routes.route("/books/new")
+# renders our new book, which has on it a form
+def new_book():
+    return render_template("new_book.html")
+
+@book_routes.route("/books/create", methods=["POST"])
+# sends a post request to /books/create
+def create_book():
+    # prints the data that gets send 
+    print("FORM DATA", dict(request.form))
+    # todo: store in database
+    # says what to with that data
+    return jsonify({
+        "messege": "BOOK CREATED OK (TODO)", 
+        "book": dict(request.form)
+    })
