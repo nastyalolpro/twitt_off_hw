@@ -1,6 +1,6 @@
 # twitt_off_hw
 
-A web application that decides wich user is more likely to write given twitt.
+A web application to add books into the table.
 
 # STEPS
 
@@ -12,4 +12,14 @@ A web application that decides wich user is more likely to write given twitt.
 
 4. Created HTML file, used jinja to insert dynamic contents into the HTML
 
-5. 
+5. In a file models.py, define a class to create books instances
+
+6. Initialize the db: 
+'''sh
+FLASK_APP=twitt_off flask db init # generates app/migrations dir
+
+FLASK_APP=twitt_off flask db migrate # creates db
+
+FLASK_APP=twitt_off flask db upgrade # create specified tables
+'''
+
